@@ -52,7 +52,7 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('User Creation Successfull!');
-                savedUser(user.displayName, user.email, user.role = 'seller');
+                savedUser(user.displayName, user.email, user.role = 'buyer');
                 // navigate('/')
             }).catch((error) => {
                 setLoginError(error.message)
@@ -100,7 +100,7 @@ const Register = () => {
                     <div className="form-control w-full mt-4">
                         <label className="mb-4">Type Of Your Account</label>
                         <select {...register('role')} className="select select-bordered">
-                            <option disabled selected>Pick Your Type</option>
+                            <option disabled>Pick Your Type</option>
                             <option>seller</option>
                             <option>buyer</option>
                         </select>

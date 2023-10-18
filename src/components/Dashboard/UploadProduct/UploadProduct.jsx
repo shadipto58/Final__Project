@@ -9,50 +9,86 @@ const UploadProduct = () => {
     const { user } = useContext(AuthContext);
     // console.log(user.email);
 
-    const { data: products, isLoading } = useQuery({
-        queryKey: ['products'],
-        queryFn: async () => {
-            const res = await fetch('http://localhost:5000/products');
-            const data = res.json();
-            return data;
-        }
-    })
-    if (isLoading) {
-        return <span className="loading loading-bars loading-lg"></span>
-    }
-    console.log(products);
+
+    // const uploadProduct = (data) => {
+    //     console.log(data);
+    //     const formData = new FormData();
+    //     formData.append('name', data.name);
+    //     formData.append('price', data.price);
+    //     formData.append('phone', data.phone);
+    //     formData.append('category', data.category);
+    //     formData.append('condition', data.condition);
+    //     formData.append('description', data.description);
+    //     formData.append('location', data.location);
+    //     formData.append('usingDeuration', data.usingDeuration);
+    //     formData.append('image', data.image[0]);
+    //     formData.append('uploaderEmail', user?.email);
+    //     formData.append('uploaderName', user?.displayName);
+
+
+    //     fetch('http://localhost:5000/products', {
+    //         method: 'POST',
+    //         body: formData
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             if (data.insertedId) {
+    //                 toast.success(`Product added successfully`);
+    //                 reset()
+    //             }
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         })
+
+    // }
 
     const uploadProduct = (data) => {
-        console.log(data);
+        //console.log(data);
         const formData = new FormData();
-        formData.append('name', data.name);
-        formData.append('price', data.price);
-        formData.append('phone', data.phone);
-        formData.append('category', data.category);
-        formData.append('condition', data.condition);
-        formData.append('description', data.description);
-        formData.append('location', data.location);
         formData.append('image', data.image[0]);
-        formData.append('uploaderEmail', user?.email);
-        formData.append('uploaderName', user?.displayName);
 
+        const url = 'https://api.imgbb.com/1/upload?key=6f58f526709e7190405ed3cd1db3f661';
 
-        fetch('http://localhost:5000/products', {
-            method: 'POST',
+        fetch(url, {
+            method: "POST",
             body: formData
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.insertedId) {
-                    toast.success(`Product added successfully`);
-                    reset()
+            .then(imageData => {
+                //console.log(imageData);
+                if (imageData.success) {
+
+                    const products = {
+                        name: data.name,
+                        category: data.category,
+                        condition: data.condition,
+                        location: data.location,
+                        phone: data.phone,
+                        price: data.price,
+                        usingDeuration: data.usingDeuration,
+                        image: imageData?.data?.url,
+                        uploaderEmail: user?.email,
+                        uploaderName: user?.displayName
+
+                    }
+
+                    fetch('http://localhost:5000/products', {
+                        method: "POST",
+                        headers: {
+                            "content-type": "application/json"
+                        },
+                        body: JSON.stringify(products)
+                    })
+                        .then(res => res.json())
+                        .then(result => {
+                            //console.log(result);
+                            toast.success(`product added successfully`)
+                            reset();
+                        })
                 }
             })
-            .catch(error => {
-                console.log(error);
-            })
-
     }
 
 
@@ -91,10 +127,10 @@ const UploadProduct = () => {
                         <div className="form-control w-full mt-4">
                             <label className="text-sm text-black font-semibold mb-2.5">Product Category</label>
                             <select {...register('category')} className="select select-bordered">
-                                <option>Electronics</option>
-                                <option>Mobile</option>
-                                <option>Car</option>
-                                <option>Bike</option>
+                                <option>electronics</option>
+                                <option>mobile</option>
+                                <option>car</option>
+                                <option>bike</option>
                             </select>
                         </div>
                         <div className="form-control w-full mt-4">
@@ -106,8 +142,20 @@ const UploadProduct = () => {
                             </select>
                         </div>
 
+                        <div className="form-control w-full mt-4">
+                            <label className="text-sm text-black font-semibold mb-2.5">Time Of Use</label>
+                            <select {...register('usingDeuration')} className="select select-bordered">
+                                <option>1 Month</option>
+                                <option>2 Month</option>
+                                <option>4 Month</option>
+                                <option>8 Month</option>
+                                <option>1 Year</option>
+                                <option>2 Year</option>
+                            </select>
+                        </div>
+
                         <div className="form-control w-full mt-5">
-                            <label className="text-sm text-black font-semibold mb-2.5">Photo</label>
+                            <label className="text-sm text-black font-semibold mb-2.5">Products Photo</label>
                             <input type="file" {...register("image", { required: "Please enter your image" })} className="file-input file-input-bordered w-full" />
                             {errors.image && <label className='text-red-500'>{errors.image?.message}</label>}
                         </div>
@@ -123,13 +171,7 @@ const UploadProduct = () => {
                     </form>
                 </div>
             </div>
-            <div>
-                <h2>go forv b ujhhdc</h2>
-                {
-                    products.map(product => <img key={product._id} className='w-[40px] h-[40px] rounded-full' src={`data:image/png;base64,${product.image}`} />)
-                }
-                <img src="" alt="" />
-            </div>
+
         </div>
     );
 };

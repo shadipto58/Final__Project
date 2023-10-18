@@ -10,22 +10,26 @@ const Categorie = () => {
     const categorys = [
         {
             id: 1,
-            categoryName: 'Electronics',
+            title: 'Electronics',
+            categoryName: 'electronics',
             image: 'https://i.ibb.co/q1MMTxm/tv-2110505-1280.png'
         },
         {
             id: 2,
-            categoryName: 'Mobile',
+            title: 'Mobile',
+            categoryName: 'mobile',
             image: 'https://i.ibb.co/3ryL1SP/phone-icon.jpg'
         },
         {
             id: 3,
-            categoryName: 'Bike',
+            title: 'Bike',
+            categoryName: 'bike',
             image: 'https://i.ibb.co/Wx4y2m2/bike-1.png'
         },
         {
             id: 4,
-            categoryName: 'Car',
+            title: 'Car',
+            categoryName: 'car',
             image: 'https://i.ibb.co/FxWzNMd/ford-mustang-155132-1920.png'
         },
     ]

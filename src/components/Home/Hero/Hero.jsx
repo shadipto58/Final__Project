@@ -4,7 +4,7 @@ import car1 from '../../../assets/icons/car-1.png';
 const Hero = () => {
     return (
         <>
-            <div className='container mx-auto my-10'>
+            <div className='container mx-auto my-10 z-10'>
 
                 <div id="default-carousel" className="relative w-full sm:px-0 px-4" data-carousel="static">
                     {/*Carousel wrapper */}
@@ -56,7 +56,6 @@ const Hero = () => {
                         </span>
                     </button>
                 </div>
-
             </div>
 
         </>

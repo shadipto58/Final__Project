@@ -9,10 +9,12 @@ import Shop from '../components/Shop/Shop';
 import ProductDetails from '../components/ProductDetails/ProductDetails';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
-import Category from '../components/Category/Category';
 import Dashboard from '../components/Dashboard/Dashboard';
 import DashboardLayout from '../Layout/DashboardLayout/DashboardLayout';
 import UploadProduct from '../components/Dashboard/UploadProduct/UploadProduct';
+import Product from '../components/Product/Product';
+import AllUser from '../components/Dashboard/AllUser/AllUser';
+import AdminRoute from './AdminRoute/AdminRoute';
 
 const router = createBrowserRouter([
     {
@@ -58,9 +60,15 @@ const router = createBrowserRouter([
                 element: <ErrorPage></ErrorPage>
             },
             {
-                path: '/product',
-                element: <PrivateRoute><Category></Category></PrivateRoute>
-            }
+                path: '/products/:category',
+                element: <PrivateRoute><Product></Product></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.category}`)
+            },
+            // {
+            //     path: '/products/:name',
+            //     element: <PrivateRoute><Product></Product></PrivateRoute>,
+            //     loader: ({ params }) => fetch(`http://localhost:5000/products/${params.name}`)
+            // }
         ]
     },
     {
@@ -74,6 +82,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/uploadProduct',
                 element: <UploadProduct></UploadProduct>
+            },
+            {
+                path: '/dashboard/alluser',
+                element: <AdminRoute><AllUser></AllUser></AdminRoute>
             },
 
         ]

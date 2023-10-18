@@ -17,11 +17,11 @@ const Login = () => {
 
     // EMAIL PASSWORD LOGIN
     const handleLogin = (data) => {
-        console.log(data);
+        //console.log(data);
         userLogin(data.email, data.password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                //console.log(user);
                 toast.success('User Login Successfull!');
                 reset()
                 navigate('/')
@@ -40,12 +40,29 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('User Login Successfull!');
+                savedUser(user.displayName, user.email, user.role = 'buyer');
 
             }).catch((error) => {
                 setLoginError(error.message)
             });
     }
 
+    // STORE USER DATA FOR NEXT 
+    const savedUser = (name, email, role) => {
+        const user = { name, email, role };
+        fetch('http://localhost:5000/users', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+            })
+    }
 
     return (
         <div className='flex justify-center items-center my-32'>
