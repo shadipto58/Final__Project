@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Royel Enfield 450",
+        "price": 15000,
+        "image": "https://i.ibb.co/QnT8Ltj/bike-909690-1280.jpg",
+        "category": "bike"
+    },
+    {
+        "name": "BMW 250",
+        "price": 14000,
+        "image": "https://cdn.pixabay.com/photo/2022/06/07/09/47/motorcycle-7247942_1280.png",
+        "category": "bike"
+    },
+    {
+        "name": "BMW 350",
+        "price": 1583204,
+        "image": "https://cdn.pixabay.com/photo/2021/10/11/12/03/motorcycle-6700442_1280.png",
+        "category": "bike"
+    },
+    {
+        "name": "Ducatti",
+        "price": 1466589645,
+        "image": "https://cdn.pixabay.com/photo/2021/10/10/19/52/motorcycle-6698576_1280.png",
+        "category": "bike"
+    },
+    {
+        "name": "BMW AQ1200",
+        "price": 142514,
+        "image": "https://cdn.pixabay.com/photo/2016/12/07/21/50/car-1890494_1280.jpg",
+        "category": "car"
+    },
+    {
+        "name": "MCT Gt",
+        "price": 1425814,
+        "image": "https://cdn.pixabay.com/photo/2016/09/06/13/37/maserati-gran-turismo-1649119_1280.jpg",
+        "category": "car"
+    },
+    {
+        "name": "MCT Gt",
+        "price": 1425814,
+        "image": "https://cdn.pixabay.com/photo/2016/12/03/18/57/car-1880381_1280.jpg",
+        "category": "car"
+    }
+]

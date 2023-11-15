@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Green Apple",
+        "price": 15,
+        "img": "https://img.freepik.com/free-photo/green-apples-isolated-white_114579-31433.jpg?w=1380&t=st=1694154298~exp=1694154898~hmac=b7a810f75fcceab2faf622bb03afb3e3bd8a92e983624a5057c8ca511c40b3ba"
+    },
+    {
+        "name": "Fresh Indian Malta",
+        "price": 25,
+        "img": "https://img.freepik.com/free-photo/fresh-orange-isolated-white-background_93675-130935.jpg?w=1380&t=st=1694154582~exp=1694155182~hmac=e293f148716f407be3a4a480addd4e84aa8b9395943b06c667add4416d5c00c8"
+    },
+    {
+        "name": "Chinese cabbage",
+        "price": 12,
+        "img": "https://img.freepik.com/premium-photo/chinese-cabbage_1205-506.jpg?1&w=1380"
+    },
+    {
+        "name": "Green Lettuce",
+        "price": 10,
+        "img": "https://img.freepik.com/free-photo/white-vegetable-healthy-fresh-natural_1203-5946.jpg?w=1380&t=st=1694156926~exp=1694157526~hmac=82cf1cc8000819a97d0d6f0fdc6c33069688152d6057c039cb699f74da9ff259"
+    },
+    {
+        "name": "Eggplant",
+        "price": 34,
+        "img": "https://img.freepik.com/free-photo/eggplant_144627-18693.jpg?w=826&t=st=1694157052~exp=1694157652~hmac=280a9ddd90d23442ff2fb8070942e7eb66a36e636cf179c7332ae7745bad2656"
+    },
+    {
+        "name": "Big Potatoes",
+        "price": 20,
+        "img": "https://img.freepik.com/free-photo/delicious-potatoes-white-background_1203-1899.jpg?w=1380&t=st=1694157126~exp=1694157726~hmac=26b8c9c0eb989b45ed0bb8c8d0acfac63fd1c3520addc90d332382a965888705"
+    }
+]
