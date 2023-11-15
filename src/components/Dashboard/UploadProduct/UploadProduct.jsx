@@ -26,7 +26,7 @@ const UploadProduct = () => {
     //     formData.append('uploaderName', user?.displayName);
 
 
-    //     fetch('http://localhost:5000/products', {
+    //     fetch('https://final-server-chi.vercel.app/products', {
     //         method: 'POST',
     //         body: formData
     //     })
@@ -74,7 +74,7 @@ const UploadProduct = () => {
 
                     }
 
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://final-server-chi.vercel.app/products', {
                         method: "POST",
                         headers: {
                             "content-type": "application/json"

@@ -50,7 +50,7 @@ const Login = () => {
     // STORE USER DATA FOR NEXT 
     const savedUser = (name, email, role) => {
         const user = { name, email, role };
-        fetch('http://localhost:5000/users', {
+        fetch('https://final-server-chi.vercel.app/users', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -15,6 +15,8 @@ import UploadProduct from '../components/Dashboard/UploadProduct/UploadProduct';
 import Product from '../components/Product/Product';
 import AllUser from '../components/Dashboard/AllUser/AllUser';
 import AdminRoute from './AdminRoute/AdminRoute';
+import Payment from '../components/Dashboard/Payment/Payment';
+import MyOrder from '../components/Dashboard/MyOrder/MyOrder';
 
 const router = createBrowserRouter([
     {
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 // loader: async () => {
-                //     return fetch('http://localhost:5000/product')
+                //     return fetch('https://final-server-chi.vercel.app/product')
                 // }
 
             },
@@ -48,12 +50,12 @@ const router = createBrowserRouter([
             {
                 path: '/productDetails/:productName',
                 element: <ProductDetails></ProductDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/product/${params.productName}`)
+                loader: ({ params }) => fetch(`https://final-server-chi.vercel.app/product/${params.productName}`)
             },
             {
                 path: '/myshoppingcart/:productName',
                 element: <Cart></Cart>,
-                loader: ({ params }) => fetch(`http://localhost:5000/product/${params.productName}`)
+                loader: ({ params }) => fetch(`https://final-server-chi.vercel.app/product/${params.productName}`)
             },
             {
                 path: '*',
@@ -62,12 +64,12 @@ const router = createBrowserRouter([
             {
                 path: '/products/:category',
                 element: <PrivateRoute><Product></Product></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.category}`)
+                loader: ({ params }) => fetch(`https://final-server-chi.vercel.app/products/${params.category}`)
             },
             // {
             //     path: '/products/:name',
             //     element: <PrivateRoute><Product></Product></PrivateRoute>,
-            //     loader: ({ params }) => fetch(`http://localhost:5000/products/${params.name}`)
+            //     loader: ({ params }) => fetch(`https://final-server-chi.vercel.app/products/${params.name}`)
             // }
         ]
     },
@@ -85,7 +87,16 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/alluser',
-                element: <AdminRoute><AllUser></AllUser></AdminRoute>
+                element: <AllUser></AllUser>
+            },
+            {
+                path: '/dashboard/myorders',
+                element: <MyOrder></MyOrder>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`https://final-server-chi.vercel.app/bookings/${params.id}`)
             },
 
         ]

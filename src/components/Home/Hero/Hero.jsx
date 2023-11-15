@@ -1,5 +1,9 @@
 import React from 'react';
 import car1 from '../../../assets/icons/car-1.png';
+import car2 from '../../../assets/icons/car-2.png';
+import car3 from '../../../assets/icons/car-3.png';
+import car4 from '../../../assets/icons/car-4.png';
+import car5 from '../../../assets/icons/car-5.png';
 
 const Hero = () => {
     return (
@@ -11,15 +15,15 @@ const Hero = () => {
                     <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
                         {/*Item 1 */}
                         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={car1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                            <img src={car4} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
                         </div>
                         {/*Item 2 */}
                         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={car1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                            <img src={car2} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
                         </div>
                         {/*Item 3 */}
                         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={car1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                            <img src={car3} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
                         </div>
                         {/*Item 4 */}
                         <div className="hidden duration-700 ease-in-out" data-carousel-item>
@@ -27,7 +31,7 @@ const Hero = () => {
                         </div>
                         {/*Item 5 */}
                         <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={car1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                            <img src={car5} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
                         </div>
                     </div>
                     {/*Slider indicators */}

@@ -7,7 +7,7 @@ const AllUser = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
+            const res = await fetch('https://final-server-chi.vercel.app/users');
             const data = await res.json();
             return data;
         }
@@ -16,7 +16,7 @@ const AllUser = () => {
 
     // MAKE ADMIN FUNTIONALITY
     const makeAdmin = (id) => {
-        fetch(`http://localhost:5000/users/admin${id}`, {
+        fetch(`https://final-server-chi.vercel.app/users/admin${id}`, {
             method: "PUT",
 
         })
@@ -32,7 +32,7 @@ const AllUser = () => {
     // REMOVE ADMIN FUNTIONALITY
     const removeAdmin = (id) => {
         //console.log(id);
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://final-server-chi.vercel.app/users/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

@@ -25,16 +25,12 @@ const DashboardLayout = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-white text-base-content">
+                    <ul className="menu p-4 w-80 min-h-full bg-white text-base-content space-y-5">
                         {/* Sidebar content here */}
                         <li className=' font-semibold'><Link to='/dashboard'>My Products</Link></li>
-
-
                         <li className=' font-semibold'><Link to='/dashboard/alluser'>All User</Link></li>
-
-
                         <li className=' font-semibold'><Link to='/dashboard/uploadProduct'>Upload Product</Link></li>
-                        <li className=' font-semibold'><Link to='/dashboard/addDoctor'>Add a Doctor</Link></li>
+                        <li className=' font-semibold'><Link to='/dashboard/myorders'>My Order</Link></li>
                         <li className=' font-semibold'><Link to='/dashboard/manageDoctor'>Manage Doctors</Link></li>
 
 

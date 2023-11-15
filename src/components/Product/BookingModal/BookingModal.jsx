@@ -27,7 +27,7 @@ const BookingModal = ({ bookingData }) => {
         }
         //console.log(bookings);
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://final-server-chi.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -65,20 +65,20 @@ const BookingModal = ({ bookingData }) => {
                         <div className="form-control w-full mt-4">
                             <label className="mb-4"><span className='font-semibold text-[#FF7A00]'>Your Name :</span> {user.displayName}</label>
                             <label className="mb-4"><span className='font-semibold text-[#FF7A00]'>Your Email :</span> {user.email}</label>
-                            <label className="mb-4"><span className='font-semibold text-[#FF7A00]'>Product Name :</span>{name}</label>
+                            <label className="mb-4"><span className='font-semibold text-[#FF7A00]'>Product Name :</span> {name}</label>
                             <label className="mb-4"><span className='font-semibold text-[#FF7A00]'>Product Price :</span> {price}</label>
 
                         </div>
                         <div className="form-control w-full mt-4">
                             <label className="mb-4 text-[#FF7A00] font-semibold">Your Phone</label>
-                            <input name='phone' type="number" placeholder='Enter Your Phone' className="input input-bordered" />
+                            <input name='phone' type="number" placeholder='Enter Your Phone' required className="input input-bordered" />
                         </div>
                         <div className="form-control w-full mt-4">
                             <label className="mb-4 text-[#FF7A00] font-semibold">Location</label>
-                            <input name='location' type="text" placeholder='Enter Meeting Location' className="input input-bordered" />
+                            <input name='location' type="text" placeholder='Enter Meeting Location' required className="input input-bordered" />
                         </div>
 
-                        <input type='submit' className='btn bg-[#FF7A00] hover:bg-[#FF7A00] text-white mt-5 w-full form-control ' value='submit' />
+                        <input method="dialog" type='submit' className='btn bg-[#FF7A00] hover:bg-[#FF7A00] text-white mt-5 w-full form-control ' value='submit' />
                     </form>
                     <div className="modal-action block">
                         <form method="dialog">

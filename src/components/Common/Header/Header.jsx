@@ -29,7 +29,7 @@ const Header = () => {
 
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/${email}`)
+            fetch(`https://final-server-chi.vercel.app/users/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     //console.log(data);
@@ -39,7 +39,7 @@ const Header = () => {
                 })
         }
     }, [email])
-    console.log(isBuyer);
+
 
     const menuItem = <React.Fragment>
         <li className='text-[#000] text-xl font-semibold'><Link to="/">Home</Link></li>
@@ -58,14 +58,6 @@ const Header = () => {
                 </>
 
         }
-        {/* {
-            isBuyer ? <li className='text-[#000] text-xl font-semibold'><Link to="/dashboard">Buyer</Link></li>
-                :
-                isSeller ? <li className='text-[#000] text-xl font-semibold'><Link to="/dashboard">oppo</Link></li>
-                    :
-
-
-        } */}
 
 
     </React.Fragment>
@@ -85,7 +77,7 @@ const Header = () => {
                                 {menuItem}
                             </ul>
                         </div>
-                        <a className=""><img src={logo} alt="" /></a>
+                        <Link to='/' className=""><img src={logo} alt="" /></Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
@@ -97,7 +89,7 @@ const Header = () => {
                             user?.uid ?
                                 <div className='flex justify-between items-center'>
                                     <div className='me-3'>
-                                        <button className='btn bg-[#FF7A00] sm:block hidden'><Link to='/login' onClick={handleSignOut} className='text-xl text-[#fff] capitalize'>Logout</Link></button>
+                                        <button className='px-3 py-2 border-2 rounded-xl border-[#FF7A00] bg-[#FF7A00] hover:bg-white group sm:block hidden transition-all duration-500 ease-in-out'><Link to='/login' onClick={handleSignOut} className='text-xl text-[#fff] font-semibold group-hover:text-[#FF7A00] capitalize transition-all duration-500 ease-in-out'>Logout</Link></button>
                                     </div>
                                     <div className="dropdown dropdown-end">
                                         <label tabIndex={0} className=" rounded-full m-1 flex justify-center items-center text-5xl text-[#FF7A00] cursor-pointer"><CgProfile></CgProfile></label>
@@ -111,7 +103,7 @@ const Header = () => {
                                                     <p className='text-[#808080]'>+880171455</p>
                                                 </div>
                                             </div>
-                                            <li><Link to='' className='font-semibold'>My Orders</Link></li>
+                                            <li><Link to='/dashboard' className='font-semibold'>My Orders</Link></li>
                                             <li><Link to='' className='font-semibold'>Profiles</Link></li>
                                             <li><Link to='' onClick={handleSignOut} className='font-semibold'>Logout</Link></li>
                                         </ul>
@@ -120,7 +112,7 @@ const Header = () => {
                                 :
                                 <div className='flex justify-between items-center'>
                                     <div className='me-3'>
-                                        <button className='btn bg-[#FF7A00] sm:block hidden'><Link to='/login' className='text-xl text-[#fff] capitalize'>Login</Link></button>
+                                        <button className='px-3 py-2 border-2 rounded-xl border-[#FF7A00] bg-[#FF7A00] hover:bg-white group sm:block hidden transition-all duration-500 ease-in-out'><Link to='/login' className='text-xl text-[#fff] font-semibold group-hover:text-[#FF7A00] capitalize transition-all duration-500 ease-in-out'>Login</Link></button>
                                     </div>
                                     <div className=' '>
                                         <Link to='/login' className='text-5xl text-[#FF7A00]'><CgProfile></CgProfile></Link>
